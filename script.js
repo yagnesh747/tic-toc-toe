@@ -27,7 +27,7 @@ function handleClick(e) {
   cell.classList.add(currentClass);
 
   if (checkWin(currentClass)) {
-    message.textContent = Player ${isXTurn ? 'X' : 'O'} wins!;
+   message.textContent = `Player ${isXTurn ? 'X' : 'O'} wins!`;
     endGame();
   } else if (isDraw()) {
     message.textContent = "It's a draw!";
