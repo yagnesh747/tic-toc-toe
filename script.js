@@ -14,7 +14,8 @@ const winCombos = [
 function startGame() {
   cells.forEach(cell => {
     cell.classList.remove('x', 'o');
-    cell.removeEventListener('click', handleClick); // Clear old listener
+    cell.textContent = '';
+    cell.removeEventListener('click', handleClick);
     cell.addEventListener('click', handleClick, { once: true });
   });
   message.textContent = '';
@@ -25,9 +26,10 @@ function handleClick(e) {
   const cell = e.target;
   const currentClass = isXTurn ? 'x' : 'o';
   cell.classList.add(currentClass);
+  cell.textContent = isXTurn ? 'X' : 'O';
 
   if (checkWin(currentClass)) {
-   message.textContent = `Player ${isXTurn ? 'X' : 'O'} wins!`;
+    message.textContent = `Player ${isXTurn ? 'X' : 'O'} wins!`;
     endGame();
   } else if (isDraw()) {
     message.textContent = "It's a draw!";
