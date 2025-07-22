@@ -1,0 +1,58 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f8f8f8;
+  }
+  
+  h1 {
+    color: #333;
+    margin-top: 30px;
+  }
+  
+  .game-container {
+    margin-top: 20px;
+  }
+  
+  .board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    gap: 5px;
+    margin: 20px auto;
+    width: 310px;
+  }
+  
+  .cell {
+    background-color: #fff;
+    border: 2px solid #444;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    font-size: 2.5em;
+  }
+  
+  .cell.x::before {
+    content: "X";
+    color: #d35400;
+    font-weight: bold;
+  }
+  
+  .cell.o::before {
+    content: "O";
+    color: #2980b9;
+    font-weight: bold;
+  }
+  
+  #message {
+    font-size: 1.2em;
+    margin: 20px 0;
+  }
+  
+  #restart {
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+  }
